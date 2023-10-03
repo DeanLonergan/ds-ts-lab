@@ -53,6 +53,15 @@ function findFriends(f: Friend[],
     return f.filter(filter).map(f => f.name);
 }
 
+function addInterest(f: Friend, interest: string){
+    if (f.interests){
+        f.interests.push(interest)
+    } else {
+        f.interests = [interest]
+    }
+    return f.interests
+}
+
 // console.log(older(friends[0]))
 // console.log(allOlder(friends))
 // console.log(highestExtension(colleagues.current));
@@ -62,6 +71,7 @@ function findFriends(f: Friend[],
 // console.log(sortColleagues(colleagues.current, (a, b) => a.name.length - b.name.length));
 // console.log(findFriends(friends, (friend) => friend.name.startsWith('Pa')));
 // console.log(findFriends(friends, (friend) => friend.age < 35));
-console.log(sortColleagues(colleagues.current, (a, b) => (a.contact.extension - b.contact.extension),3));
-console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length),1));
-console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length)));
+// console.log(sortColleagues(colleagues.current, (a, b) => (a.contact.extension - b.contact.extension),3));
+// console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length),1));
+// console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length)));
+console.log(addInterest(friends[1], 'Politics'))
