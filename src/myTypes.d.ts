@@ -44,3 +44,8 @@ export type BuddyList = {
   administrator: Administrator;
   members: Buddy[];
 };
+
+export type FriendPartial = Partial<Friend>
+export type EventPass = Omit<Colleague, "contact"> & { passCode : number; }   // Type for gaining access to an event, e.g. concert
+export type SecureFriendContact = Readonly<Pick<Friend,"name" | "phone" > >   // Make person's properties immutable.
+export type FriendAndColleague = Friend & Colleague;
